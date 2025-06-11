@@ -61,12 +61,23 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 * Examples for AI tools: ChatGPT, Copilot
 
 ## Business Requirements
+
 * Describe your business requirements
 
+1. The customer would like to know which factors are most relevant for task success.
+2. Furthermore the customer is interested in what the correlation between the AI usage, the number of commits and bugs is.
+3. Also the customer would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
 
+* List here your project hypothesis(es) and how you envision validating it (them)
+
+* We suspect that the most relevant factors will be sleep_hours (because sleeping to little leads to a lack of focus), distractions (since that holds someone back from doint the work), ai_usage (since depending on the amount, too much usage will result in a poorer outcome).
+  * We will conduct a correlation study.
+* We hypothesize that there is a certain range of usage that is beneficial for it would reduce the cognitive load. However, too much might lead to a confusing code or even distract from doing the work.
+  * We will conduct a correlation study.
+* We suspect that we can create a model that can reliably predict which developer needs help based on the most relevant factors.
+  * After finding the most relevant factors will train and test model.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 * List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
