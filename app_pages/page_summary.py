@@ -8,33 +8,35 @@ def page_summary_body():
     # text based on README file - "Dataset Content" section
     st.info(
         f"**Project Terms & Jargon**\n"
-        f"* A **customer** is a person who consumes your service or product.\n"
-        f"* A **prospect** is a potential customer.\n"
-        f"* A **churned** customer is a user who has stopped using your product or service.\n "
-        f"* This customer has a **tenure** level, the number of months this person " 
-        f"has used our product/service.\n\n"
+        f"* Examples for AI tools: ChatGPT, Copilot\n\n"
         f"**Project Dataset**\n"
-        f"* The dataset represents a **customer base from a Telco company** "
-        f"containing individual customer data on the products and services "
-        f"(like internet type, online security, online backup, tech support), "
-        f"account information (like contract type, payment method, monthly charges) "
-        f"and profile (like gender, partner, dependents).")
+        f"* The dataset contains information about AI developers over 500 days.\n\n"
+    )
+
+    st.markdown('''
+        | Variable | Meaning | Unit |
+        | :-----: | :----- | :-----|
+        | hours_coding | Total focused hours spent on software development work (0–12 hours) | 0–12 hours |
+        | coffee_intake_mg | Daily caffeine intake in milligrams | 0–600 mg |
+        | distractions | Number of distractions (e.g., meetings, Slack notifications) | 0–10 |
+        | sleep_hours | Number of hours of sleep the previous night | 3–10 hours |
+        | commits | Number of code commits pushed during the day | 0–20 |
+        | bugs_reported | Number of bugs reported in code written that day | 0–10 |
+        | ai_usage_hours | Number of hours spent using AI tools  | 0–12 |
+        | cognitive_load | Self-reported mental strain | a scale of 1 to 10 |
+        | task_success | Whether the daily productivity goal was achieved | 0 or 1 where 0 = no and 1 = yes |\n\n'''
+    )
 
     # Link to README file, so the users can have access to full project documentation
     st.write(
         f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://github.com/Code-Institute-Solutions/churnometer).")
+        f"[Project README file](https://github.com/Markus-Hefner/Portfolio-Project-5).")
     
 
     # copied from README file - "Business Requirements" section
     st.success(
-        f"The project has 2 business requirements:\n"
-        f"* 1 - The client is interested in understanding the patterns from the customer base "
-        f"so that the client can learn the most relevant variables that are correlated to a "
-        f"churned customer.\n"
-        f"* 2 - The client is interested in determining whether or not a given prospect will churn. "
-        f"If so, the client is interested to know when. In addition, the client is "
-        f"interested in learning from which cluster this prospect will belong in the customer base. "
-        f"Based on that, present potential factors that could maintain and/or bring  "
-        f"the prospect to a non-churnable cluster."
+        f"The project has 3 business requirements:\n"
+        f"* 1. The customer would like to know which factors are most relevant for task success.\n"
+        f"* 2. Furthermore the customer is interested in what the correlation between the AI usage, the number of commits and bugs is.\n"
+        f"* 3. Also the customer would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors."
         )

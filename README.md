@@ -44,8 +44,10 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 * Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
 
+The dataset contains information about AI developers over 500 days.
+
 | Variable | Meaning | Unit |
-| :-----: | :----- | - :-----|
+| :-----: | :----- | :-----|
 | hours_coding | Total focused hours spent on software development work (0–12 hours) | 0–12 hours |
 | coffee_intake_mg | Daily caffeine intake in milligrams | 0–600 mg |
 | distractions | Number of distractions (e.g., meetings, Slack notifications) | 0–10 |
