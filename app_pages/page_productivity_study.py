@@ -18,7 +18,7 @@ def page_productivity_study_body():
     vars_to_study = ['Contract', 'InternetService',
                      'OnlineSecurity', 'TechSupport', 'tenure']
 
-    st.write("### Churned Customer Study")
+    st.write("### Productivity Study")
     st.info(
         f"* The client is interested in understanding the patterns from the customer base "
         f"so that the client can learn the most relevant variables correlated "
