@@ -93,7 +93,42 @@ The dataset contains information about AI developers over 500 days.
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
+### Page 1: Short project summary
 
+Project Terms & Jargon
+Describe Project Dataset
+State Business Requirements
+
+### Page 2: Productivity Study
+
+Before the analysis, we knew we wanted this page to answer business requirement 1 and 2, but we couldn't know in advance which plots would need to be displayed.
+After data analysis, we agreed with stakeholders that the page will:
+State business requirement 1
+Checkbox: data inspection on AI developer dataset (display the number of rows and columns in the data, and display the first ten rows of the data)
+Display the most correlated variables to task_success and the conclusions
+Checkbox: Individual plots showing the task_success levels for each correlated variable
+Checkbox: Parallel plot using task_success and correlated variables
+
+### Page 3: Developer Task Success
+
+State business requirement 2
+Set of widgets inputs, which relates to the developers' productivity. Each set of inputs is related to a given ML task to predict prospect Churn, Tenure and Cluster.
+"Run predictive analysis" button that serves the prospect data to our ML pipelines and predicts if the prospect will churn or not, if so, when. It also shows to which cluster the prospect belongs and the cluster's profile. For the churn and tenure predictions, the page will inform the associated probability for churning and tenure level.
+
+### Page 4: Project Hypothesis and Validation
+
+Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
+1 - We suspect customers are churning with low tenure levels
+Correct. The correlation study at Churned Customer Study supports that.
+2 - A customer survey showed our customers appreciate Fibre Optic.
+A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
+
+### Page 5: Predict Churn
+
+Considerations and conclusions after the pipeline is trained
+Present ML pipeline steps
+Feature importance
+Pipeline performance
 
 ## Unfixed Bugs
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
