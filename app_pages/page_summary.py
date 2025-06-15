@@ -36,7 +36,7 @@ def page_summary_body():
     # copied from README file - "Business Requirements" section
     st.success(
         f"The project has 3 business requirements:\n"
-        f"* 1. The customer would like to know which factors are most relevant for task success.\n"
-        f"* 2. Furthermore the customer is interested in what the correlation between the AI usage, the number of commits and bugs is.\n"
-        f"* 3. Also the customer would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors."
+        f"* 1. The client would like to know which factors are most relevant for task success.\n"
+        f"* 2. Furthermore the client is interested in what the correlation between the AI usage, the number of commits and bugs is.\n"
+        f"* 3. The client would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors."
         )

@@ -25,6 +25,10 @@ def page_predict_task_success_body():
         f"outputs/ml_pipeline/predict_task_success/{version}/y_test.csv").values
 
     st.write("### ML Pipeline: Predict Task Success")
+    st.info(
+        f"* The client would like to have a model to predict whether or not a "
+        f"developer is likely to not succeed based on the most relevant factors."
+    )
     # display pipeline training summary conclusions
     st.info(
         f"* The pipeline was tuned aiming at least 0.80 Recall on 'Task Success' class, "

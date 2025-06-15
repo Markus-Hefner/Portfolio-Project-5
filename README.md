@@ -68,7 +68,7 @@ The dataset contains information about AI developers over 500 days.
 
 1. The client would like to know which factors are most relevant for task success.
 2. Furthermore the client is interested if there is a "sweet spot" for the use of AI tools in terms of hours in relation to task success.
-3. Also the client would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
+3. The client would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
 
 ## Hypothesis and how to validate?
 
@@ -104,26 +104,49 @@ State Business Requirements
 Before the analysis, we knew we wanted this page to answer business requirement 1 and 2, but we couldn't know in advance which plots would need to be displayed.
 After data analysis, we agreed with stakeholders that the page will:
 State business requirement 1
+State business requirement 2
 Checkbox: data inspection on AI developer dataset (display the number of rows and columns in the data, and display the first ten rows of the data)
 Display the most correlated variables to task_success and the conclusions
 Checkbox: Individual plots showing the task_success levels for each correlated variable
-Checkbox: Parallel plot using task_success and correlated variables
-
-### Page 3: Developer Task Success
-
-State business requirement 2
-Set of widgets inputs, which relates to the developers' productivity. Each set of inputs is related to a given ML task to predict prospect Churn, Tenure and Cluster.
-"Run predictive analysis" button that serves the prospect data to our ML pipelines and predicts if the prospect will churn or not, if so, when. It also shows to which cluster the prospect belongs and the cluster's profile. For the churn and tenure predictions, the page will inform the associated probability for churning and tenure level.
 
 ### Page 4: Project Hypothesis and Validation
 
 Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
-1 - We suspect customers are churning with low tenure levels
-Correct. The correlation study at Churned Customer Study supports that.
-2 - A customer survey showed our customers appreciate Fibre Optic.
-A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
 
-### Page 5: Predict Churn
+* We suspect that the most relevant factors will be `sleep_hours`
+(because sleeping to little leads to a lack of focus), `distractions`
+(since that holds someone back from doint the work), `ai_usage_hours`
+(since depending on the amount, too much usage will result in a
+poorer outcome).
+This proved to be mostly incorrect. The most relevant factors are
+`caffeine_intake_mg` and `hours_coding` which show a strong positive
+correlation to `task_success`. The use of AI shows only a weak
+correlation."
+
+* We hypothesize that there is a certain range of usage that is
+beneficial for task success. However, too much might lead to a
+confusing code or even distract from doing the work.
+This proved to be correct. At 2-hour mark of AI usage the data shows
+the biggest discrepancy between task success and no task success
+suggesting that this might be the sweet spot for AI usage.
+
+* We suspect that we can create a model that can reliably predict
+which developer needs help based on the most relevant factors.
+This proved to be correct (see test results under Predict Task Success).
+However, we were suprised to learn that `caffeine_intake_mg` was the
+most relevant factor with more than double the importance than the
+second place which was `cognitive_load` and common sense suggests
+that there might be more to it. That is why further analysis might
+be justifed to see if it really is just the caffeine intake that
+drives the successful completion of a task or if it just a proxy for
+an underlying correlation that is the real reason. (E.g. maybe
+developers who take in more caffeine also code the optimum amount of
+hours like others ut are also more alert thus making more progress
+with less errors.)
+
+### Page 5: Predict Task Success
+
+State business requirement 2.
 
 Considerations and conclusions after the pipeline is trained
 Present ML pipeline steps
@@ -134,9 +157,10 @@ Pipeline performance
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
 ## Deployment
+
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: https://YOUR_APP_NAME.herokuapp.com/
 * Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
