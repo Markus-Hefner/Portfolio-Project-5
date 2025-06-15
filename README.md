@@ -66,9 +66,9 @@ The dataset contains information about AI developers over 500 days.
 
 * Describe your business requirements
 
-1. The customer would like to know which factors are most relevant for task success.
-2. Furthermore the customer is interested in what the correlation between the AI usage, the number of commits and bugs is.
-3. Also the customer would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
+1. The client would like to know which factors are most relevant for task success.
+2. Furthermore the client is interested if there is a "sweet spot" for the use of AI tools in terms of hours in relation to task success.
+3. Also the client would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
 
 ## Hypothesis and how to validate?
 
@@ -76,8 +76,8 @@ The dataset contains information about AI developers over 500 days.
 
 * We suspect that the most relevant factors will be sleep_hours (because sleeping to little leads to a lack of focus), distractions (since that holds someone back from doint the work), ai_usage (since depending on the amount, too much usage will result in a poorer outcome).
   * We will conduct a correlation study.
-* We hypothesize that there is a certain range of usage that is beneficial for it would reduce the cognitive load. However, too much might lead to a confusing code or even distract from doing the work.
-  * We will conduct a correlation study.
+* We hypothesize that there is a certain range of usage that is beneficial for task success. However, too much might lead to a confusing code or even distract from doing the work.
+  * The results from the study mentioned above should give us the necessary insights.
 * We suspect that we can create a model that can reliably predict which developer needs help based on the most relevant factors.
   * After finding the most relevant factors will train and test model.
 
