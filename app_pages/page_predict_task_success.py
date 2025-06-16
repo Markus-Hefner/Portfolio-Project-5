@@ -1,10 +1,15 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from src.data_management import load_ai_developer_data, load_pkl_file
+from src.data_management import load_pkl_file
 from src.machine_learning.evaluate_clf import clf_performance
 
-# copied and adjusted
+
+# The 'blueprint' for this code was taken from Code Institute's second
+# walkthrough project of their 'Predictive Analytics' course and adjusted for
+# this project's purposes.
+
+
 def page_predict_task_success_body():
 
     version = 'v1'

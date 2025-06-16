@@ -2,7 +2,12 @@ import streamlit as st
 import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix
 
-# copied
+
+# The 'blueprint' for this code was taken from Code Institute's second
+# walkthrough project of their 'Predictive Analytics' course and adjusted for
+# this project's purposes.
+
+
 def confusion_matrix_and_report(X, y, pipeline, label_map):
 
     prediction = pipeline.predict(X)
