@@ -195,6 +195,17 @@ Pipeline performance
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
+Log into your Heroku account
+Click on 'New' in the upper right-hand corner.
+From the dropdown menu select 'Create new app'.
+Give the app a name of your choosing.
+Choose your location.
+(Don't add to pipeline.)
+Click on the 'Deploy'-tab.
+Under 'Deployment Method' choose 'GitHub'.
+Search for your copy of the repository and choose it.
+Click on 'Deploy Branch' and wait until the built is done.
+
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
