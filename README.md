@@ -180,6 +180,11 @@ Pipeline performance
 ## Unfixed Bugs
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
+* I was not able to fix the 'FutureWarning' when I ran a code cell that used the ppscore package in the 'DataCleaning' notebook. The message was:  
+  "/home/cistudent/.local/lib/python3.12/site-packages/ppscore/calculation.py:201: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype CategoricalDtype) instead or is_categorical_dtype(series)".  
+  If I updated ppscore it caused a compatibility error with pandas since it needed pandas<2.0.0,>= 1.0.0. However, downgrading pandas was also not a good option since when ydata-profiling called visions it needed pandas>=2.0.0. Downgrading visions to version 0.7.5 was compatible with the pandas<2.0.0 but then in turn incompatible for the purposes it was called by ydata-profiling.  
+  So in short: Either ppscore would not work or ydata-profiling (or better visions) depending on the pandas version. So I decided, since it was 'only' a future warning and not error to hide it from view.
+
 ## Deployment
 
 ### Heroku
