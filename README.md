@@ -1,44 +1,22 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the bring your own data project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+# Portfolio Project 5
 
 ## How to use this repo
 
-1. Use this template to create your GitHub project repo
+Fork this repo.
 
-1. In your newly created repo click on the green Code button. 
+In your forked churnometer repo click on the green Code button.
 
-1. Then, from the Codespaces tab, click Create codespace on main.
+Then, from the Codespaces tab, click Create codespace on main.
 
-1. Wait for the workspace to open. This can take a few minutes.
+Wait for the workspace to open. This can take a few minutes.
 
-1. Open a new terminal and `pip3 install -r requirements.txt`
+Open a new terminal and pip3 install -r requirements.txt
 
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
+Click the kernel button and choose Python Environments.
 
-1. Click the kernel button and choose Python Environments.
+Choose the kernel Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use ! python --version in a notebook code cell.
 
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
+Your workspace is now ready to use. When you want to return to this project, you can find it in your Cloud IDE Dashboard. You should only create 1 workspace per project.
 
 ## Dataset Content
 
