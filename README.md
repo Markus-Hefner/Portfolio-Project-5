@@ -193,24 +193,23 @@ Pipeline performance
 * Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 * The project was deployed to Heroku using the following steps.
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. Log into your Heroku account
+2. Click on 'New' in the upper right-hand corner.
+3. From the dropdown menu select 'Create new app'.
+4. Give the app a name of your choosing.
+5. Choose your location.
+6. (Don't add to pipeline.)
+7. Click on the 'Deploy'-tab.
+8. Under 'Deployment Method' choose 'GitHub'.
+9. Search for your copy of the repository and choose it.
+10. Click on 'Deploy Branch' and wait until the built is done.
+11. 
+12. At the Deploy tab, select GitHub as the deployment method.
+13. Select your repository name and click Search. Once it is found, click Connect.
+14. Select the branch you want to deploy, then click Deploy Branch.
+15. Click now the button Open App on the top of the page to access your App.
 
-Log into your Heroku account
-Click on 'New' in the upper right-hand corner.
-From the dropdown menu select 'Create new app'.
-Give the app a name of your choosing.
-Choose your location.
-(Don't add to pipeline.)
-Click on the 'Deploy'-tab.
-Under 'Deployment Method' choose 'GitHub'.
-Search for your copy of the repository and choose it.
-Click on 'Deploy Branch' and wait until the built is done.
-
+Note: If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
