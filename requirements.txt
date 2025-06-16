@@ -1,5 +1,5 @@
 # you should list here the libraries you will use in the project
-streamlit==0.85.0
+streamlit==1.45.1
 altair<5
 numpy==1.26.1
 pandas==2.1.1
