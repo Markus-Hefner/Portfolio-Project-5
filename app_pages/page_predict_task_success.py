@@ -10,7 +10,7 @@ def page_predict_task_success_body():
     version = 'v1'
     # load needed files
     task_success_pipe_dc_fe = load_pkl_file(
-        f'outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_data_cleaning_feat_eng.pkl')
+        f'outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_feat_eng.pkl')
     task_success_pipe_model = load_pkl_file(
         f"outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_model.pkl")
     task_success_feat_importance = plt.imread(
