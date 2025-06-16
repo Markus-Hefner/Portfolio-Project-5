@@ -33,8 +33,9 @@ def page_project_hypothesis_body():
         f"that there might be more to it. That is why further analysis might "
         f"be justifed to see if it really is just the coffee intake that "
         f"drives the successful completion of a task or if it just a proxy for "
-        f"an underlying correlation that is the real reason. (E.g. maybe "
+        f"an underlying correlation that is the real reason. E.g. maybe "
         f"developers who take in more coffee also code the optimum amount of "
         f"hours like others but are also more alert thus making more progress "
-        f"with less errors.)"
+        f"with less errors. Since `hours_coding` also has a strong correlation "
+        f"to `task_success` this idea might be worth investigating."
     )
