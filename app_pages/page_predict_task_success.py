@@ -31,7 +31,7 @@ def page_predict_task_success_body():
     )
     # display pipeline training summary conclusions
     st.info(
-        f"* The pipeline was tuned aiming at least 0.80 Recall on 'Task Success' class, "
+        f"* The pipeline was tuned aiming at least 0.80 Recall on 'No task success' class, "
         f"since we are interested in this project in detecting a potential developer "
         f"who might need some help. \n"
         f"* The pipeline performance on train and test set is 0.90 and 0.95, respectively."
