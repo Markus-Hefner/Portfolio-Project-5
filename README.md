@@ -84,10 +84,34 @@ The dataset contains information about AI developers over 500 days.
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 * List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
 
+* Business Requirement 1: Correlation study with data visualization
+  * We will inspect the data related to the productivity of AI developers.
+  * We will conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to `task_success`.
+  * We will search for the four top correlated variables
+  * We will plot the main variables against `task_success` to visualize insights.
+
+* Business Requirement 2: Correlation study with data visualization
+  * In the correlation study we will also answer the question if there is a certain amount of AI tools usage that is beneficial to productivity measured in successfully completing a task and what this amount is.
+
+* Business Requirement 3: Predicting task success
+  * We want to predict if a developer will succeed in task completion.
+  * For that We want to build a binary classifier that uses the most relevant variables from the dataset.
 
 ## ML Business Case
 * In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
+### Predict Task Success
+
+#### Classification Model
+
+* We want an ML model to predict if a developer will succeed in task completion based on the dataset. The target variable is numerical. We consider a classification model with the outcome of: 0 (no task success) and 1 (task success)
+* Our ideal outcome is to provide the client with insights on where they can help their developers with task completion.
+* The model success metrics are
+  * at least 80% Recall for no task success, on train and test set
+* The model output is defined as a flag, indicating if a developer will succeed in task completion or not and the associated probability of not succeeding.
+* Heuristics: Currently, there is no approach to task success.
+* The training data to fit the model comes from a dataset containing records of 500 days of AI developers.
+  * Train data - target: `task_success`; features: all other variables.
 
 ## Dashboard Design
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
