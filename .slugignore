@@ -2,3 +2,4 @@
 .git/
 .git/objects/
 *.md
+inputs/datasets/raw/
