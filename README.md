@@ -4,7 +4,7 @@
 
 Fork this repo.
 
-In your forked churnometer repo click on the green Code button.
+In your forked repo click on the green Code button.
 
 Then, from the Codespaces tab, click Create codespace on main.
 
@@ -22,7 +22,7 @@ Your workspace is now ready to use. When you want to return to this project, you
 
 * Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
 
-The dataset contains information about AI developers over 500 days.
+The dataset contains information about AI developers over 500 days. It contains the following variables 
 
 | Variable | Meaning | Unit |
 | :-----: | :----- | :-----|
