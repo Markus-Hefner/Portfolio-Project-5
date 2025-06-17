@@ -1,28 +1,11 @@
 # Portfolio Project 5
 
-## How to use this repo
-
-Fork this repo.
-
-In your forked repo click on the green Code button.
-
-Then, from the Codespaces tab, click Create codespace on main.
-
-Wait for the workspace to open. This can take a few minutes.
-
-Open a new terminal and pip3 install -r requirements.txt
-
-Click the kernel button and choose Python Environments.
-
-Choose the kernel Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use ! python --version in a notebook code cell.
-
-Your workspace is now ready to use. When you want to return to this project, you can find it in your Cloud IDE Dashboard. You should only create 1 workspace per project.
+## Introduction: A write-up of the CRISP-DM workflow and how it was used to create this project
 
 ## Dataset Content
 
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size and to have a shorter model training time. If you are doing an image recognition project, we suggest you consider using an image shape that is 100px × 100px or 50px × 50px, to ensure the model meets the performance requirement but is smaller than 100Mb for a smoother push to GitHub. A reasonably sized image set is ~5000 images, but you can choose ~10000 lines for numeric or textual data.
-
-The dataset contains information about AI developers over 500 days. It contains the following variables 
+The dataset contains information about AI developers over 500 days capturing eight variables that correlate with successfully accomplishing a set task trying to understand what drives productivity for AI developers.  
+It contains the following variables:
 
 | Variable | Meaning | Unit |
 | :-----: | :----- | :-----|
@@ -60,7 +43,6 @@ The dataset contains information about AI developers over 500 days. It contains 
   * After finding the most relevant factors will train and test model.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
 
 * Business Requirement 1: Correlation study with data visualization
   * We will inspect the data related to the productivity of AI developers.
@@ -76,7 +58,6 @@ The dataset contains information about AI developers over 500 days. It contains 
   * For that We want to build a binary classifier that uses the most relevant variables from the dataset.
 
 ## ML Business Case
-* In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
 ### Predict Task Success
 
@@ -92,7 +73,7 @@ The dataset contains information about AI developers over 500 days. It contains 
   * Train data - target: `task_success`; features: all other variables.
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
+
 * Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
 
 ### Page 1: Short project summary
@@ -148,15 +129,24 @@ with less errors.)
 
 ### Page 5: Predict Task Success
 
-State business requirement 2.
+State business requirement 3.
 
 Considerations and conclusions after the pipeline is trained
 Present ML pipeline steps
 Feature importance
 Pipeline performance
 
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+## Testing and Bugs
+
+### Manual Testing
+
+| Start                | Feature             | User Action | Outcome | Test Result | Image             |
+| :------------------: | :------------------ | :---------: | :------ | :---------: | :---------------: |
+| all pages | Menu on the sidebar | Click on any of the pages | That page is displayed | passed | ![Short-Project-Summary-page](readmedocs/Short-Project-Summary-page.png "Short Project Summary page") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") ![Project-Hypothesis-and-Validation-page](readmedocs/Project-Hypothesis-and-Validation-page.png "Project Hypothesis and Validation page") ![ML-Task-Success-page](readmedocs/ML-Task-Success-page.png "ML Task Success page") |
+| page_productivity_study.py | Checkbox before 'Inspect AI Developer Productivity Dataset' | Check or un-check checkbox | The first ten rows of the dataset are displayed or collapsed, respectively | passed | ![Productivity-Study-page-expanded-dataset](readmedocs/Productivity-Study-page-expanded-dataset.png "Productivity Study page expanded dataset") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") |
+| page_productivity_study.py | Checkbox before 'Task Success Levels per Variable' | Check or un-check checkbox | The feature importance plots are displayed or collapsed, respectively | passed | ![Productivity-Study-page-expanded-correlations](readmedocs/Productivity-Study-page-expanded-correlations.png "Productivity Study page expanded correlations")![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") |
+
+### Unfixed Bugs
 
 * I was not able to fix the 'FutureWarning' when I ran a code cell that used the ppscore package in the 'DataCleaning' notebook. The message was:  
   "/home/cistudent/.local/lib/python3.12/site-packages/ppscore/calculation.py:201: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype CategoricalDtype) instead or is_categorical_dtype(series)".  
@@ -165,10 +155,26 @@ Pipeline performance
 
 ## Deployment
 
+### Locally
+
+1. Log into your GitHub account
+2. Fork this repo.
+3. In your forked repo click on the green Code button.
+4. Click on the 'Codespaces' tab
+5. Click Create codespace on main.
+6. Wait for the workspace to open.
+7. Open a new terminal
+8. In the terminal type 'pip3 install -r requirements.txt' and press enter to install all the requirements
+9. Click the kernel button and choose Python Environments.
+10. In the terminal type 'streamlit run app.py' and press enter
+11. In the pop-up window in the bottom-right corner click on 'Open in browser'.
+
+Note: Choose the kernel Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use ! python --version in a notebook code cell.
+
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/
-* Set the runtime.txt Python version to a [Heroku-24](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The App live link is: [PP5](https://ai-developer-productivity-84f8052b1212.herokuapp.com/)
+
 * The project was deployed to Heroku using the following steps.
 
 1. Log into your Heroku account
@@ -181,17 +187,21 @@ Pipeline performance
 8. Under 'Deployment Method' choose 'GitHub'.
 9. Search for your copy of the repository and choose it.
 10. Click on 'Deploy Branch' and wait until the built is done.
-11. 
-12. At the Deploy tab, select GitHub as the deployment method.
-13. Select your repository name and click Search. Once it is found, click Connect.
-14. Select the branch you want to deploy, then click Deploy Branch.
-15. Click now the button Open App on the top of the page to access your App.
+11. At the Deploy tab, select GitHub as the deployment method.
+12. Select your repository name and click Search. Once it is found, click Connect.
+13. Select the branch you want to deploy, then click Deploy Branch.
+14. Click now the button Open App on the top of the page to access your App.
 
 Note: If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
 
+For a complete list of all the libraries that were used for the project please read the 'requirements-dev.txt' file.
+
+Example for use cases:
+* The packages 'pandas', 'matplotlib', 'seaborn' and 'plotly' were used to create the plots.
+* The package 'streamlit' was used to run the streamlit app.
+* The package 'xgboost' contained one of the algorithms that was test in the ML business case.
 
 ## Credits 
 
