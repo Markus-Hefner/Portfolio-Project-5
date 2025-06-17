@@ -24,7 +24,7 @@ def page_productivity_study_body():
 
     st.write("### Productivity Study")
     st.info(
-        f"* The client would like to know which factors are most relevant for task success."
+        f"* The client would like to know which factors are most relevant for task success. \n"
         f"* Furthermore the client is interested if there is a 'sweet spot' for the use of AI tools in terms of hours in relation to task success.\n"
     )
 

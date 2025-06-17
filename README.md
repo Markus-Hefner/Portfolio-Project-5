@@ -221,28 +221,22 @@ Note: If the slug size is too large then add large files not required for the ap
 For a complete list of all the libraries that were used for the project please read the 'requirements-dev.txt' file.
 
 Example for use cases:
+
 * The packages 'pandas', 'matplotlib', 'seaborn' and 'plotly' were used to create the plots.
 * The package 'streamlit' was used to run the streamlit app.
 * The package 'xgboost' contained one of the algorithms that was test in the ML business case.
 
-## Credits 
+## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+### Content
 
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+* The template for a jupyter notebook from Code Institute was used as a starting point for the notebooks of this project. Also the structure and naming of the notebooks and the streamlit pages Code Institute's second walkthrough project of their 'Predictive Analytics' course was used as a layout guideline for the notebooks and streamlit pages of this project
+* Code from Code Institute's second walkthrough project of their 'Predictive Analytics' course was used when its logic was the best solution for a particular problem. They then were adjusted to fit the needs of this project. In order to avoid craming the README file with code blocks the aforementioned code blocks are marked as such with comments in the code.
 
 ### Media
 
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
+* The page icon for the page tab in the browser was taken from streamlit emoji library.
 
 ## Acknowledgements (optional)
-* Thank the people who provided support through this project.
 
+* I would like to thank my mentor Rohit Sharma from Code Institute. He provided me with much insight on how to deal with this project and its particular challenges. Thank you very much!
