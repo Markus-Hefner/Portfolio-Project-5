@@ -3,3 +3,4 @@
 .git/objects/
 *.md
 inputs/datasets/raw/
+readmedocs/
