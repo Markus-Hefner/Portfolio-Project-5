@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def page_summary_body():
 
-    st.write("### Quick Project Summary")
+    st.write("### Short Project Summary")
 
     # text based on README file - "Dataset Content" section
     st.info(

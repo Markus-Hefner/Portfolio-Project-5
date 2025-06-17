@@ -162,7 +162,7 @@ Pipeline performance
 
 ### Manual Testing
 
-| Start                | Feature             | User Action | Outcome | Test Result | Image (the images contain the working title of the app) |
+| Start                | Feature             | User Action | Outcome | Test Result | Image |
 | :------------------: | :------------------ | :---------: | :------ | :---------: | :---------------: |
 | all pages | Menu on the sidebar | Click on any of the pages | That page is displayed | passed | ![Short-Project-Summary-page](readmedocs/Short-Project-Summary-page.png "Short Project Summary page") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") ![Project-Hypothesis-and-Validation-page](readmedocs/Project-Hypothesis-and-Validation-page.png "Project Hypothesis and Validation page") ![ML-Task-Success-page](readmedocs/ML-Task-Success-page.png "ML Task Success page") |
 | page_productivity_study.py | Checkbox before 'Inspect AI Developer Productivity Dataset' | Check or un-check checkbox | The first ten rows of the dataset are displayed or collapsed, respectively | passed | ![Productivity-Study-page-expanded-dataset](readmedocs/Productivity-Study-page-expanded-dataset.png "Productivity Study page expanded dataset") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") |
