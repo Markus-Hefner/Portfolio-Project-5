@@ -2,6 +2,39 @@
 
 ## Introduction: A write-up of the CRISP-DM workflow and how it was used to create this project
 
+### Business Understanding
+
+A clear business case was outlined and business requirements were formulated so that everyone involved knows what the objective was. To even deepen the understanding of the data and the objective and how to reach it, several hypotheses were stated as well as how to validate them and a rationale to map the business requirements to the Data Visualizations and ML tasks  
+See 'Business Requirements' section.  
+See 'Hypothesis and how to validate' section.  
+See 'The rationale to map the business requirements to the Data Visualizations and ML tasks' section.
+
+### Data Understanding
+
+For a better understanding of the dataset it was described as well as the terms and jargon used.  
+See 'Dataset Content' section.  
+See 'Terms and Jargon' section.
+
+### Data Preparation
+
+The data was cleaned and feature engineered to make it more suitable for the machine learning process.  
+See 'Data Cleaning and Feature Engineering' in the 'ML Business Case' section.
+
+### Modelling
+
+A suitable model was choosen as well as a success metric and other information regarding the model, its inputs and outputs.  
+See 'Classification Model' in the 'ML Business Case' section.
+
+### Evaluation
+
+An evaluation of the results were done with statements of whether or not the business requirements were met.  
+See 'Page 4: Project Hypothesis and Validation' of the 'Dashboard Design' section.  
+
+### Deployment
+
+The streamlit app was successfully deployed locally and on heroku.
+See 'Deployment' section.
+
 ## Dataset Content
 
 The dataset contains information about AI developers over 500 days capturing eight variables that correlate with successfully accomplishing a set task trying to understand what drives productivity for AI developers.  
@@ -25,15 +58,11 @@ It contains the following variables:
 
 ## Business Requirements
 
-* Describe your business requirements
-
 1. The client would like to know which factors are most relevant for task success.
 2. Furthermore the client is interested if there is a "sweet spot" for the use of AI tools in terms of hours in relation to task success.
 3. The client would like to have a model to predict whether or not a developer is likely to not succeed based on the most relevant factors.
 
-## Hypothesis and how to validate?
-
-* List here your project hypothesis(es) and how you envision validating it (them)
+## Hypothesis and how to validate
 
 * We suspect that the most relevant factors will be sleep_hours (because sleeping to little leads to a lack of focus), distractions (since that holds someone back from doint the work), ai_usage (since depending on the amount, too much usage will result in a poorer outcome).
   * We will conduct a correlation study.
@@ -60,6 +89,11 @@ It contains the following variables:
 ## ML Business Case
 
 ### Predict Task Success
+
+#### Data Cleaning and Feature Engineering
+
+* No missing data are in the dataset. No categorical variables are in the dataset. In that regard no data cleaning will to be done.
+* Different approaches will be used to feature engineer potential variables for better use in the model training.
 
 #### Classification Model
 
@@ -113,19 +147,7 @@ This proved to be correct. At 2-hour mark of AI usage the data shows
 the biggest discrepancy between task success and no task success
 suggesting that this might be the sweet spot for AI usage.
 
-* We suspect that we can create a model that can reliably predict
-which developer needs help based on the most relevant factors.
-This proved to be correct (see test results under Predict Task Success).
-However, we were suprised to learn that `caffeine_intake_mg` was the
-most relevant factor with more than double the importance than the
-second place which was `cognitive_load` and common sense suggests
-that there might be more to it. That is why further analysis might
-be justifed to see if it really is just the caffeine intake that
-drives the successful completion of a task or if it just a proxy for
-an underlying correlation that is the real reason. (E.g. maybe
-developers who take in more caffeine also code the optimum amount of
-hours like others ut are also more alert thus making more progress
-with less errors.)
+* We suspect that we can create a model that can reliably predict which developer needs help based on the most relevant factors. This proved to be correct (see test results under Predict Task Success). However, we were suprised to learn that `coffee_intake_mg` was the most relevant factor with more than double the importance than the second place which was `cognitive_load` and common sense suggests that there might be more to it. That is why further analysis might be justifed to see if it really is just the coffee intake that drives the successful completion of a task or if it just a proxy for an underlying correlation that is the real reason. E.g. maybe developers who take in more coffee also code the optimum amount of hours like others but are also more alert thus making more progress with less errors. Since `hours_coding` also has a strong correlation to `task_success` this idea might be worth investigating."
 
 ### Page 5: Predict Task Success
 
