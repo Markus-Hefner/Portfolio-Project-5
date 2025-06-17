@@ -37,7 +37,7 @@ See 'Deployment' section.
 
 ## Dataset Content
 
-The dataset contains information about AI developers over 500 days capturing eight variables that correlate with successfully accomplishing a set task trying to understand what drives productivity for AI developers.  
+The dataset is public and contains information about AI developers over 500 days capturing eight variables that correlate with successfully accomplishing a set task trying to understand what drives productivity for AI developers.  
 It contains the following variables:
 
 | Variable | Meaning | Unit |
@@ -162,7 +162,7 @@ Pipeline performance
 
 ### Manual Testing
 
-| Start                | Feature             | User Action | Outcome | Test Result | Image             |
+| Start                | Feature             | User Action | Outcome | Test Result | Image (the images contain the working title of the app) |
 | :------------------: | :------------------ | :---------: | :------ | :---------: | :---------------: |
 | all pages | Menu on the sidebar | Click on any of the pages | That page is displayed | passed | ![Short-Project-Summary-page](readmedocs/Short-Project-Summary-page.png "Short Project Summary page") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") ![Project-Hypothesis-and-Validation-page](readmedocs/Project-Hypothesis-and-Validation-page.png "Project Hypothesis and Validation page") ![ML-Task-Success-page](readmedocs/ML-Task-Success-page.png "ML Task Success page") |
 | page_productivity_study.py | Checkbox before 'Inspect AI Developer Productivity Dataset' | Check or un-check checkbox | The first ten rows of the dataset are displayed or collapsed, respectively | passed | ![Productivity-Study-page-expanded-dataset](readmedocs/Productivity-Study-page-expanded-dataset.png "Productivity Study page expanded dataset") ![Productivity-Study-page-collapsed](readmedocs/Productivity-Study-page-collapsed.png "Productivity Study page collapsed") |
@@ -174,6 +174,7 @@ Pipeline performance
   "/home/cistudent/.local/lib/python3.12/site-packages/ppscore/calculation.py:201: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype CategoricalDtype) instead or is_categorical_dtype(series)".  
   If I updated ppscore it caused a compatibility error with pandas since it needed pandas<2.0.0,>= 1.0.0. However, downgrading pandas was also not a good option since when ydata-profiling called visions it needed pandas>=2.0.0. Downgrading visions to version 0.7.5 was compatible with the pandas<2.0.0 but then in turn incompatible for the purposes it was called by ydata-profiling.  
   So in short: Either ppscore would not work or ydata-profiling (or better visions) depending on the pandas version. So I decided, since it was 'only' a future warning and not error to hide it from view.
+* I was not able to get the column headers lined up with the columns in the deployed version of the 'page_predict_task_success' page.
 
 ## Deployment
 
@@ -232,6 +233,7 @@ Example for use cases:
 
 * The template for a jupyter notebook from Code Institute was used as a starting point for the notebooks of this project. Also the structure and naming of the notebooks and the streamlit pages Code Institute's second walkthrough project of their 'Predictive Analytics' course was used as a layout guideline for the notebooks and streamlit pages of this project
 * Code from Code Institute's second walkthrough project of their 'Predictive Analytics' course was used when its logic was the best solution for a particular problem. They then were adjusted to fit the needs of this project. In order to avoid craming the README file with code blocks the aforementioned code blocks are marked as such with comments in the code.
+* The dataset was taken from kaggle.com.
 
 ### Media
 

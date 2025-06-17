@@ -10,7 +10,10 @@ def page_summary_body():
         f"**Project Terms & Jargon**\n"
         f"* Examples for AI tools: ChatGPT, Copilot\n\n"
         f"**Project Dataset**\n"
-        f"* The dataset contains information about AI developers over 500 days.\n\n"
+        f"*The dataset is public and contains information about AI developers "
+        f"over 500 days capturing eight variables that correlate with "
+        f"successfully accomplishing a set task trying to understand what "
+        f"drives productivity for AI developers.\n\n"
     )
 
     st.markdown('''
