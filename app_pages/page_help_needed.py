@@ -6,7 +6,7 @@ from src.machine_learning.predict_task_success import (predict_task_success)
 def page_help_needed_body():
 
     
-    # load predict task success files
+    # Load predict task success files
     version = 'v1'
     task_success_pipe_fe = load_pkl_file(
         f"outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_feat_eng.pkl")
@@ -26,3 +26,68 @@ def page_help_needed_body():
         f"hard truths."
     )
     st.write("---")
+
+    # Generate Live Data
+    check_variables_for_UI(task_success_features)
+    X_live = DrawInputsWidgets()
+
+    # Predict on live data
+    if st.button("Run Help Analysis"):
+        help_prediction = predict_task_success(
+            X_live, task_success_features, task_success_pipe_fe, task_success_pipe_model)
+
+
+def check_variables_for_UI(task_success_features):
+    import itertools
+
+    # The widgets inputs are the features used in the pipeline
+    # We combine them only with unique values
+    combined_features = set(
+        list(
+            itertools.chain(task_success_features)
+        )
+    )
+    st.write(
+        f"* There are {len(combined_features)} features for the UI: \n\n {combined_features}")
+    
+
+def DrawInputsWidgets():
+
+    # Load dataset
+    df = load_ai_developer_data()
+    percentageMin, percentageMax = 0.4, 2.0
+
+    # We create input widgets only for 2 features
+    col1, col2 = st.columns(2)
+
+    # We are using these features to feed the ML pipeline - values copied from check_variables_for_UI() result
+
+    # Create an empty DataFrame, which will be the live data
+    X_live = pd.DataFrame([], index=[0])
+
+    # From here on we draw the widget based on the variable type
+    # and set initial values
+    # Since they are both numerical the syntax is almost identical.
+    with col1:
+        feature = "cognitive_load"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median()
+        )
+    X_live[feature] = st_widget
+
+    with col2:
+        feature = "coffee_intake_mg"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median()
+        )
+    X_live[feature] = st_widget
+
+    # st.write(X_live)
+
+    return X_live
