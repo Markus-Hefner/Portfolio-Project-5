@@ -15,5 +15,5 @@ app.add_page("Short Project Summary", page_summary_body)
 app.add_page("Productivity Study", page_productivity_study_body)
 app.add_page("Project Hypothesis and Validation", page_project_hypothesis_body)
 app.add_page("Help Needed?", page_help_needed_body)
-app.add_page("ML: Task Success", page_predict_task_success_body)
+app.add_page("ML Pipeline: Predict Task Success", page_predict_task_success_body)
 app.run() # Run the app

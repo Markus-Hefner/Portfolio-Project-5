@@ -126,7 +126,7 @@ Checkbox: data inspection on AI developer dataset (display the number of rows an
 Display the most correlated variables to task_success and the conclusions
 Checkbox: Individual plots showing the task_success levels for each correlated variable
 
-### Page 4: Project Hypothesis and Validation
+### Page 3: Project Hypothesis and Validation
 
 Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
 
@@ -149,7 +149,15 @@ suggesting that this might be the sweet spot for AI usage.
 
 * We suspect that we can create a model that can reliably predict which developer needs help based on the most relevant factors. This proved to be correct (see test results under Predict Task Success). However, we were suprised to learn that `coffee_intake_mg` was the most relevant factor with more than double the importance than the second place which was `cognitive_load` and common sense suggests that there might be more to it. That is why further analysis might be justifed to see if it really is just the coffee intake that drives the successful completion of a task or if it just a proxy for an underlying correlation that is the real reason. E.g. maybe developers who take in more coffee also code the optimum amount of hours like others but are also more alert thus making more progress with less errors. Since `hours_coding` also has a strong correlation to `task_success` this idea might be worth investigating."
 
-### Page 5: Predict Task Success
+### Page 4: Help Needed?
+
+Introductory text
+
+Set of widgets inputs, to set the developer's cognitive load and caffeine intake.
+
+"Run Help Analysis" button that serves the widgets' inputs to our ML pipelines and predict whether or not the developer will achieve the productivity goal set for the day, how likely the statement is and if the developer needs additional help.
+
+### Page 5: ML Pipeline: Predict Task Success
 
 State business requirement 3.
 
