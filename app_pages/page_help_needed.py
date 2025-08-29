@@ -4,6 +4,11 @@ from src.data_management import load_ai_developer_data, load_pkl_file
 from src.machine_learning.predict_task_success import (predict_task_success)
 
 
+# The 'blueprint' for this code was taken from Code Institute's second
+# walkthrough project of their 'Predictive Analytics' course and adjusted for
+# this project's purposes.
+
+
 def page_help_needed_body():
 
     # Load predict task success files

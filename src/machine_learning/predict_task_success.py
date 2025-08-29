@@ -18,9 +18,9 @@ def predict_task_success(X_live, task_success_features, task_success_pipeline_dc
     # Create a logic to display the results
     task_success_prob = task_success_prediction_proba[0, task_success_prediction][0]*100
     if task_success_prediction == 1:
-        task_success_result = 'will achieve todays productivity goal'
+        task_success_result = 'will achieve today\'s productivity goal'
     else:
-        task_success_result = 'will not achieve todays productivity goal and needs additional help'
+        task_success_result = 'will not achieve today\'s productivity goal and needs additional help'
 
     statement = (
         f'### There is {task_success_prob.round(1)}% probability '
