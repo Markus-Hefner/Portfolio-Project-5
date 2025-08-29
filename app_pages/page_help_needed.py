@@ -3,9 +3,9 @@ import pandas as pd
 from src.data_management import load_ai_developer_data, load_pkl_file
 from src.machine_learning.predict_task_success import (predict_task_success)
 
+
 def page_help_needed_body():
 
-    
     # Load predict task success files
     version = 'v1'
     task_success_pipe_fe = load_pkl_file(
@@ -14,39 +14,20 @@ def page_help_needed_body():
         f"outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_model.pkl")
     task_success_features = (pd.read_csv(f"outputs/ml_pipeline/predict_task_success/{version}/X_train.csv").columns.to_list())
 
-    import os
-    from datetime import datetime
-
-    st.write("FE PIPE:", task_success_pipe_fe)
-    st.write("FE n_features_in_:", getattr(task_success_pipe_fe, "n_features_in_", "n/a"))
-    st.write("FE feature_names_in_:", list(getattr(task_success_pipe_fe, "feature_names_in_", [])))
-
-    st.write("MODEL PIPE:", task_success_pipe_model)
-    st.write("MODEL n_features_in_:", getattr(task_success_pipe_model, "n_features_in_", "n/a"))
-    st.write("MODEL feature_names_in_:", list(getattr(task_success_pipe_model, "feature_names_in_", [])))
-
-    fe_path = f"outputs/ml_pipeline/predict_task_success/{version}/clf_pipeline_feat_eng.pkl"
-    st.write("FE file path:", fe_path)
-    st.write("FE mtime:", datetime.fromtimestamp(os.path.getmtime(fe_path)))
-
-
     st.write("### Help Needed?")
     st.info(
         f"Though all business requirements are answered on the other dashboard pages "
         f"as a small bonus we want to give the customer the ability to check "
         f"whether or not a developer needs help given that the customer has the "
         f"information about the developers caffeine intake and their cognitive load."
-        f"Caution: Since the findings that answered business requirement 3 are "
-        f"meant to be taken with caution (see Hypothesis page) the information "
+        f"Caution: Since the findings that answered business requirement 3 were "
+        f"very suprising and might justify further analysis the information "
         f"the customer gleames from the calcuation are also not to be taken as "
-        f"hard truths."
+        f"hard truths. (See Hypothesis page for further clarification.)"
     )
     st.write("---")
 
-    st.write(f"{task_success_features}")
-
     # Generate Live Data
-    check_variables_for_UI(task_success_features)
     X_live = DrawInputsWidgets()
 
     # Predict on live data
@@ -56,24 +37,6 @@ def page_help_needed_body():
         help_prediction = predict_task_success(
             X_live, task_success_features, task_success_pipe_fe, task_success_pipe_model)
 
-    st.write(f"{len(task_success_features)} erwartete Features:", task_success_features)
-    st.write("X_live Spalten:", list(X_live.columns))
-    st.write(getattr(task_success_pipe_fe, "n_features_in_", "n/a"))
-
-
-def check_variables_for_UI(task_success_features):
-    import itertools
-
-    # The widgets inputs are the features used in the pipeline
-    # We combine them only with unique values
-    combined_features = set(
-        list(
-            itertools.chain(task_success_features)
-        )
-    )
-    st.write(
-        f"* There are {len(combined_features)} features for the UI: \n\n {combined_features}")
-    
 
 def DrawInputsWidgets():
 
@@ -97,8 +60,9 @@ def DrawInputsWidgets():
             label="Cognitive load (1.0–10.0)",
             min_value=1.0,
             max_value=10.0,
-            value=5.0,
-            step=0.1
+            value=4.4,
+            step=0.1,
+            format="%.1f",
         )
     X_live[feature] = st_widget
 
@@ -108,12 +72,9 @@ def DrawInputsWidgets():
             label="Caffeine intake (0-600 mg/day)",
             min_value=0,
             max_value=600,
-            value=300,
+            value=420,
             step=1
         )
     X_live[feature] = st_widget
 
-    # st.write(X_live)
-
     return X_live
-
